@@ -25,7 +25,7 @@ Consider the following grammer for a simplified scheme grammar
 <Seq> ::= <SExpr> <Seq> | <SExpr>
 <Atom> ::= ID | INT | REAL | STRING
 ```
-the symbol `$` denotes an empty string. 
+ 
 
 The token types are described by the following regular expressions (use [regex101.com](https://regex101.com/) to explore them):
 
@@ -34,18 +34,19 @@ The token types are described by the following regular expressions (use [regex10
 - `STRING` = ["(?>\\\\"|.)*"](https://regex101.com/r/dyEpSJ/1)
 - `ID` = [[^\\s"\\(\\)]+](https://regex101.com/r/PeL1IV/1/)
 - `LITERAL` = [[\\(\\)]](https://regex101.com/r/YTsgaN/1)
-- Anythin alse other than whaitespace is an error  
+- Anything else other than whitespace is an error  
   `ERROR`=  [^\s]
 
-You may use these `Regex` patterns to design your own lexer as we did in the lab, or you can use the C# `Regex.Matches(src)` method to scan the input for matches, taking care to skip whitespace. When designing a tokenizer, the first pattern that matches the input string starting from the current position should be the one that you use.
+You may use these `Regex` patterns to design your own lexer based on a state diagram as we did in the lab, or you can use the C# `Regex.Matches(src)` method to scan the input for matches, taking care to skip whitespace. When designing a tokenizer, the first pattern that matches the input string starting from the current position should be the one that you use.
 
 
 You may notice that '+', '-', '*',  '/', '=', '<', and '>' are identifiers in our language. 
 
 ## Tokenization
 
-Each time your program reads a LISP expression, you will print all of the tokens and lexemes. Each token will be displayed on its own line, the token type will be displayed with a field-width of 20 characters, follows by the lexeme (the text of the token). 
+Each time your program reads a LISPish program, you will print all of the tokens and lexemes. Each token will be displayed on its own line, the token type will be displayed with a field-width of 20 characters, followed by the lexeme (the text of the token). 
 
+Please refer to the file to the examples in [./example1.expected](./example1.expected) through [./example7expected](./example1.expected) to get a precise idea of what the output should be. 
 
 
 ## Parse Tree
