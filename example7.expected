@@ -5,8 +5,7 @@ Tokens
 --------------------------------------------------
 LITERAL              : (
 ID                   : +
-INT                  : 3
-REAL                 : .14
+REAL                 : 3.14
 LITERAL              : (
 ID                   : *
 INT                  : 4

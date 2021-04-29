@@ -5,8 +5,7 @@ Tokens
 --------------------------------------------------
 LITERAL              : (
 ID                   : +
-INT                  : 3
-REAL                 : .14
+REAL                 : 3.14
 LITERAL              : (
 ID                   : *
 INT                  : 4
@@ -27,27 +26,23 @@ Program
         Seq                             
           SExpr                         
             Atom                        
-              INT                        3
+              REAL                       3.14
           Seq                           
             SExpr                       
-              Atom                      
-                REAL                     .14
-            Seq                         
-              SExpr                     
-                List                    
-                  LITERAL                (
+              List                      
+                LITERAL                  (
+                Seq                     
+                  SExpr                 
+                    Atom                
+                      ID                 *
                   Seq                   
                     SExpr               
                       Atom              
-                        ID               *
+                        INT              4
                     Seq                 
                       SExpr             
                         Atom            
-                          INT            4
-                      Seq               
-                        SExpr           
-                          Atom          
-                            INT          7
-                  LITERAL                )
+                          INT            7
+                LITERAL                  )
       LITERAL                            )
 --------------------------------------------------
