@@ -10,10 +10,10 @@ lispish.exe: lispish.cs
 	csc lispish.cs
 
 %.output: lispish.exe %.input
-	mono lispish.exe < $*.input > $*.output
+	@timeout -v 30s mono lispish.exe < $*.input  2>&1 > $*.output
 
 check-%: %.output
-	cmp $*.output $*.expected
+	@diff -qb $*.output $*.expected
 	@echo $*- Success!
 
 update: 
