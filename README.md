@@ -29,10 +29,10 @@ Consider the following grammer for a simplified scheme grammar
 The token types are described by the following regular expressions (use [regex101.com](https://regex101.com/) to explore them):
 
 - `LITERAL` = [[\\(\\)]](https://regex101.com/r/YTsgaN/1)
-- `REAL` = [[+-]?[0-9]*\.[0-9]+](https://regex101.com/r/Zneyy2/1)
+- `REAL` = [[+-]?[0-9]*\\.[0-9]+](https://regex101.com/r/Zneyy2/1)
 - `INT` = [[+-]?[0-9]+](https://regex101.com/r/iXVsuF/1)
 - `STRING` = ["(\\\\.|[^"])*"](https://regex101.com/r/dyEpSJ/1).  Multiline strings are not allowed. 
-- `ID` = [[^\\s"\\(\\)]+](https://regex101.com/r/PeL1IV/1/)
+- `ID` = [[^\s"\(\)]+](https://regex101.com/r/PeL1IV/1/)
 - Anything else other than whitespace is an error ( `INVALID`)
 
 You may use these `Regex` patterns to design your own lexer based on a state diagram as we did in the lab, or you can use the C# `Regex.Matches(src)` method to scan the input for matches, taking care to skip whitespace. When designing a tokenizer, the first pattern that matches the input string starting from the current position should be the one that you use.
